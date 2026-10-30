@@ -23,7 +23,7 @@ targets = []
 
 def tap(x, y):
     """Respond to screen tap."""
-    # revisa si la pelota está fuera de la pantalla para permitir un nuevo lanzamiento
+    # Revisa si la pelota está fuera de la pantalla para permitir un nuevo lanzamiento
     if not inside(ball):
         # coloca la pelota en su posición inicial
         ball.x = -199
@@ -120,9 +120,9 @@ hideturtle()
 up()
 tracer(False)
 
-# permite lanzar la pelota haciendo clic en cualquier parte de la pantalla
+# permite lanzar la pelota haciendo click en cualquier parte de la pantalla
 onscreenclick(tap)
 
-# inicia el movimiento del juego y mantiene abierta la ventana
+# Inicia el movimiento del juego y mantiene abierta la ventana
 move()
 done()
