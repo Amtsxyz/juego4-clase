@@ -29,10 +29,12 @@ def tap(x, y):
         ball.x = -199
         ball.y = -199
 
-        # calcula la velocidad de la pelota dependiendo de dónde se haga clic
-        speed.x = (x + 200) / 25
-        speed.y = (y + 200) / 25
-
+    # CAMBIO REALIZADO:
+    # Se incrementó la velocidad inicial del proyectil
+    # reduciendo el divisor utilizado para calcular
+    # el vector de movimiento.
+    speed.x = (x + 200) / 15
+    speed.y = (y + 200) / 15
 
 def inside(xy):
     """Return True if xy within screen."""
@@ -68,9 +70,11 @@ def move():
         target = vector(200, y)
         targets.append(target)
 
-    # mueve todos los objetivos lentamente hacia la izquierda
+    # CAMBIO REALIZADO
+    # Se incrementó la velocidad horizontal de los objetivos
+    # para aumentar la dificultad del juego
     for target in targets:
-        target.x -= 0.5
+        target.x -= 1.5
 
     # revisa si la pelota está dentro de la pantalla
     if inside(ball):
