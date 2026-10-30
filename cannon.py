@@ -78,6 +78,14 @@ def move():
         speed.y -= 0.35
         ball.move(speed)
 
+        # revisa si la pelota salió de la ventana
+        if not inside(ball):
+            # regresa la pelota a su posición inicial y detiene su velocidad
+            ball.x = -200
+            ball.y = -200
+            speed.x = 0
+            speed.y = 0
+
     # crea una copia de los objetivos y limpia la lista original
     dupe = targets.copy()
     targets.clear()
