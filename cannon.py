@@ -36,6 +36,7 @@ def tap(x, y):
     speed.x = (x + 200) / 15
     speed.y = (y + 200) / 15
 
+
 def inside(xy):
     """Return True if xy within screen."""
     # revisa si una posición se encuentra dentro de los límites de la pantalla
@@ -103,10 +104,13 @@ def move():
     # dibuja nuevamente la pelota y los objetivos
     draw()
 
-    # revisa si algún objetivo salió de los límites de la pantalla
+    # CAMBIO AGREGADO
+    # revisa si algún objetivo salió de la pantalla
+    # y lo vuelve a colocar del lado derecho con una altura aleatoria
     for target in targets:
         if not inside(target):
-            return
+            target.x = 200
+            target.y = randrange(-150, 150)
 
     # vuelve a ejecutar el movimiento después de 50 milisegundos
     ontimer(move, 50)
